@@ -17,7 +17,7 @@ def items(request):
 
     if query:
         items = items.filter(
-            Q(names_icontains=query) | Q(description__icontains=query)
+            Q(name__icontains=query) | Q(description__icontains=query)
         )
 
     return render(
